@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -5,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Marketplace</title>
     
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <script crossorigin src="[https://unpkg.com/react@18/umd/react.production.min.js](https://unpkg.com/react@18/umd/react.production.min.js)"></script>
-    <script crossorigin src="[https://unpkg.com/react-dom@18/umd/react-dom.production.min.js](https://unpkg.com/react-dom@18/umd/react-dom.production.min.js)"></script>
-    <script src="[https://unpkg.com/@babel/standalone/babel.min.js](https://unpkg.com/@babel/standalone/babel.min.js)"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -50,29 +52,18 @@
                 image_search_active: 'Searching by image...', price: 'Price', location: 'Location',
                 send_message: 'Chat', show_number: 'Show Number', product_details: 'Product Details',
                 edit_profile_pic: 'Change Picture'
-            },
-            AR: {
-                app_name: 'Nexus', search_placeholder: 'عما تبحث؟',
-                login: 'تسجيل الدخول', add_product: 'أضف إعلان', logout: 'تسجيل خروج',
-                home: 'الرئيسية', profile: 'ملفي', admin_panel: 'لوحة الإدارة',
-                all_categories: 'الكل', electronics: 'إلكترونيات', real_estate: 'عقارات',
-                vehicles: 'مركبات', fashion: 'أزياء', urgent: 'عاجل', featured: 'مميز',
-                voice_listening: 'أستمع...', voice_error: 'الصوت غير مدعوم.',
-                image_search_active: 'جاري البحث بالصورة...', price: 'السعر', location: 'الموقع',
-                send_message: 'دردشة', show_number: 'إظهار الرقم', product_details: 'تفاصيل المنتج',
-                edit_profile_pic: 'تغيير صورة الملف الشخصي'
             }
         };
 
         const initialUsers = [
-            { id: 1, username: 'admin', password: 'admin2026', name: 'Sistem Yöneticisi', role: 'admin', avatar: '[https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150](https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150)', rating: 5.0, likedProducts: [] },
-            { id: 2, username: 'ahmet', password: '123', name: 'Ahmet Yılmaz', role: 'user', avatar: '[https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150](https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150)', rating: 4.8, likedProducts: [1] }
+            { id: 1, username: 'admin', password: 'admin2026', name: 'Sistem Yöneticisi', role: 'admin', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150', rating: 5.0, likedProducts: [] },
+            { id: 2, username: 'ahmet', password: '123', name: 'Ahmet Yılmaz', role: 'user', avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150', rating: 4.8, likedProducts: [1] }
         ];
 
         const initialProducts = [
-            { id: 1, title: 'iPhone 13 Pro Max - 256GB', description: 'Çok temiz, garantisi devam ediyor.', price: 42500, category: 'electronics', images: ['[https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&q=80&w=800)'], sellerId: 2, location: 'İstanbul', createdAt: '2 saat önce', isUrgent: true, isFeatured: true },
-            { id: 2, title: 'MacBook Air M2', description: 'Yazılımcıdan temiz cihaz.', price: 32000, category: 'electronics', images: ['[https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=800)'], sellerId: 1, location: 'Ankara', createdAt: '5 saat önce', isUrgent: false, isFeatured: false },
-            { id: 3, title: 'IKEA Modern Koltuk', description: 'Ev değişikliği sebebiyle satılık.', price: 4500, category: 'real_estate', images: ['[https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800)'], sellerId: 2, location: 'İzmir', createdAt: '1 gün önce', isUrgent: false, isFeatured: true }
+            { id: 1, title: 'iPhone 13 Pro Max - 256GB', description: 'Çok temiz, garantisi devam ediyor.', price: 42500, category: 'electronics', images: ['https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&q=80&w=800'], sellerId: 2, location: 'İstanbul', createdAt: '2 saat önce', isUrgent: true, isFeatured: true },
+            { id: 2, title: 'MacBook Air M2', description: 'Yazılımcıdan temiz cihaz.', price: 32000, category: 'electronics', images: ['https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=800'], sellerId: 1, location: 'Ankara', createdAt: '5 saat önce', isUrgent: false, isFeatured: false },
+            { id: 3, title: 'IKEA Modern Koltuk', description: 'Ev değişikliği sebebiyle satılık.', price: 4500, category: 'real_estate', images: ['https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800'], sellerId: 2, location: 'İzmir', createdAt: '1 gün önce', isUrgent: false, isFeatured: true }
         ];
 
         const safeGetStorage = (key, fallback) => {
@@ -224,7 +215,7 @@
                         </div>
 
                         <div className="flex items-center gap-2 flex-shrink-0">
-                            <button onClick={() => setLang(lang === 'TR' ? 'EN' : lang === 'EN' ? 'AR' : 'TR')} className="p-2 rounded-xl bg-indigo-800/50 hover:bg-indigo-700 font-bold text-sm hidden sm:block"><i className="fa-solid fa-globe"></i> {lang}</button>
+                            <button onClick={() => setLang(lang === 'TR' ? 'EN' : 'TR')} className="p-2 rounded-xl bg-indigo-800/50 hover:bg-indigo-700 font-bold text-sm hidden sm:block"><i className="fa-solid fa-globe"></i> {lang}</button>
                             <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="p-2 rounded-xl bg-indigo-800/50 hover:bg-indigo-700 hidden sm:block"><i className={`fa-solid ${theme==='light'?'fa-moon':'fa-sun'} text-lg`}></i></button>
                             
                             {currentUser ? (
@@ -238,7 +229,7 @@
                                         <button onClick={() => setView('add')} className="hidden lg:flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 font-medium text-sm transition"><i className="fa-solid fa-circle-plus mr-1"></i> {t.add_product}</button>
                                     )}
                                     <button onClick={() => setView(currentUser.role === 'admin' ? 'admin' : 'profile')} className="ml-2">
-                                        <img src={currentUser.avatar || '[https://ui-avatars.com/api/?name='+currentUser.username+'&background=random](https://ui-avatars.com/api/?name='+currentUser.username+'&background=random)'} className="h-10 w-10 rounded-xl object-cover border-2 border-indigo-400 hover:scale-105 transition"/>
+                                        <img src={currentUser.avatar || 'https://ui-avatars.com/api/?name='+currentUser.username+'&background=random'} className="h-10 w-10 rounded-xl object-cover border-2 border-indigo-400 hover:scale-105 transition"/>
                                     </button>
                                 </React.Fragment>
                             ) : <button onClick={() => setView('login')} className="px-5 py-2.5 rounded-xl bg-white text-indigo-900 font-bold hover:bg-indigo-50 text-sm">{t.login}</button>}
@@ -331,7 +322,7 @@
                                 </div>
                                 <div className={`mt-auto p-5 rounded-3xl border ${colors.border} bg-indigo-50/50 dark:bg-slate-800`}>
                                     <div className="flex items-center gap-4 mb-5">
-                                        <img src={seller.avatar || '[https://ui-avatars.com/api/?name='+seller.username](https://ui-avatars.com/api/?name='+seller.username)} className="w-16 h-16 rounded-2xl object-cover border-2 border-white"/>
+                                        <img src={seller.avatar || 'https://ui-avatars.com/api/?name='+seller.username} className="w-16 h-16 rounded-2xl object-cover border-2 border-white"/>
                                         <div><h3 className={`font-black text-lg ${colors.text}`}>{seller.name}</h3><div className="text-yellow-500 font-bold text-sm"><i className="fa-solid fa-star"></i> {seller.rating || 5}</div></div>
                                     </div>
                                     <div className="grid grid-cols-2 gap-3">
@@ -385,7 +376,7 @@
                                         {users.map(u => (
                                             <div key={u.id} className={`flex items-center justify-between p-4 rounded-2xl border ${colors.border} ${colors.bg}`}>
                                                 <div className="flex items-center gap-4">
-                                                    <img src={u.avatar || '[https://ui-avatars.com/api/?name='+u.username](https://ui-avatars.com/api/?name='+u.username)} className="w-12 h-12 rounded-full"/>
+                                                    <img src={u.avatar || 'https://ui-avatars.com/api/?name='+u.username} className="w-12 h-12 rounded-full"/>
                                                     <div><h4 className={`font-bold ${colors.text}`}>{u.name} {u.role === 'admin' && <span className="ml-2 text-[10px] bg-amber-500 text-black px-2 py-0.5 rounded-full uppercase">Admin</span>}</h4><p className={`text-xs ${colors.muted}`}>@{u.username}</p></div>
                                                 </div>
                                                 {u.role !== 'admin' ? (
@@ -416,7 +407,7 @@
                             <div className={`md:w-1/3 rounded-3xl p-6 border shadow-xl ${colors.cardBg} ${colors.border} h-fit`}>
                                 <div className="flex flex-col items-center text-center gap-2 relative">
                                     <div className="relative group">
-                                        <img src={currentUser.avatar || '[https://ui-avatars.com/api/?name='+currentUser.username](https://ui-avatars.com/api/?name='+currentUser.username)} className="w-24 h-24 rounded-full border-4 border-indigo-100 object-cover"/>
+                                        <img src={currentUser.avatar || 'https://ui-avatars.com/api/?name='+currentUser.username} className="w-24 h-24 rounded-full border-4 border-indigo-100 object-cover"/>
                                         <div className="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer" onClick={() => avatarInputRef.current.click()}>
                                             <i className="fa-solid fa-camera text-white text-xl"></i>
                                         </div>
@@ -453,7 +444,7 @@
                     const newProduct = {
                         id: Date.now(), title: e.target.title.value, description: e.target.description.value,
                         price: Number(e.target.price.value), category: e.target.category.value,
-                        images: [e.target.image.value || '[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800](https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800)'],
+                        images: [e.target.image.value || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800'],
                         sellerId: currentUser.id, location: e.target.location.value, createdAt: 'Az önce', isUrgent: false, isFeatured: false
                     };
                     setProducts([newProduct, ...products]); 
@@ -504,6 +495,11 @@
             return (
                 <div dir={lang === 'AR' ? 'rtl' : 'ltr'} className={`min-h-screen flex flex-col transition-colors duration-500 ${colors.bg} ${theme}`}>
                     <Navbar />
+                    <nav className="bg-indigo-900 px-4 py-2 flex justify-center gap-4 text-xs text-indigo-200 border-t border-indigo-800">
+                        <span>Hobi Projesi</span>
+                        <span>•</span>
+                        <span>Full-Stack Sistem</span>
+                    </nav>
                     <main className="flex-1">
                         {view === 'home' && <HomeView />}
                         {view === 'product' && <ProductDetailView />}
@@ -529,3 +525,6 @@
     </script>
 </body>
 </html>
+
+
+```
